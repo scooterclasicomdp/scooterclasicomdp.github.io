@@ -2,94 +2,61 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Scooter Clásico Mar del Plata</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
-
-:root{
-    --azul:#0b2545;
-    --naranja:#e67e22;
-    --crema:#f5f0e6;
-    --gris:#444;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:'Poppins',sans-serif;
-    background:var(--crema);
-    color:var(--gris);
-}
-
-h1,h2,h3{
-    font-family:'Playfair Display',serif;
-}
-
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(11,37,69,.92);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 20px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:white;
-    font-weight:600;
-    font-size:1.1rem;
-}
-
-.logo-navbar{
-    width:42px;
-    height:42px;
-    object-fit:contain;
-}
-
-nav ul{
-    display:flex;
-    gap:20px;
-    list-style:none;
-}
-
-nav a{
-    text-decoration:none;
-    color:white;
-}
-
-nav a:hover{
-    color:#d7c09e;
+    margin:0;
+    font-family:Arial,sans-serif;
 }
 
 .hero{
     height:100vh;
-    background:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.55)
-        ),
-        url('
+    background:url('hero.jpg') center center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.5);
+}
+
+.hero>*{
+    position:relative;
+    z-index:1;
+}
+
+.logo-portada{
+    max-width:500px;
+    width:90%;
+}
+
+h1{
+    font-size:60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<img src="logo-largo.png" class="logo-portada" alt="Logo">
+
+<h1>Scooter Clásico Mar del Plata</h1>
+
+<p>Desde 2014 compartiendo la pasión scooterista</p>
+
+</div>
+
+</body>
+</html>
