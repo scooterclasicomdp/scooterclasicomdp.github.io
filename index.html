@@ -3,121 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Scooter Clásico Mar del Plata</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+:root{
+    --azul:#0B2545;
+    --arena:#D7C09E;
+    --naranja:#E67E22;
+    --crema:#F5F0E6;
+    --gris:#444;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    <nav>
-<a href="#historia">Historia</a>
-<a href="#evento">Evento</a>
-<a href="#galeria">Galería</a>
-<a href="#contacto">Contacto</a>
-</nav>nav{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,.75);
-padding:15px;
-text-align:center;
-z-index:999;
+    font-family:'Poppins',sans-serif;
+    background:var(--crema);
+    color:var(--gris);
+}
+
+h1,h2,h3{
+    font-family:'Playfair Display',serif;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(11,37,69,.92);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+}
+
+.logo{
+    color:white;
+    font-size:1.4rem;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
-font-weight:bold;
+    color:white;
+    text-decoration:none;
+    font-weight:500;
 }
 
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    color:#333;
+nav a:hover{
+    color:var(--arena);
 }
 
-header{
+.hero{
     height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url('30.jpg');
-    background-size:cover;
-    background-position:center;
+    background:url('images/hero.jpg') center center/cover no-repeat;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    height:100%;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
     color:white;
-}
-
-.hero{
-    max-width:900px;
     padding:20px;
 }
 
-.logo{
-    width:180px;
-    margin-bottom:20px;
-}
-
-h1{
+.hero h1{
     font-size:4rem;
-    margin:0 0 15px;
+    margin-bottom:15px;
 }
 
-p{
+.hero p{
     font-size:1.2rem;
+    max-width:700px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--naranja);
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:40px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#c6650f;
+    transform:translateY(-3px);
 }
 
 section{
-    padding:60px 10%;
+    padding:90px 20px;
 }
 
-h2{
-    color:#0f2744;
-    border-bottom:3px solid #ff8c00;
-    padding-bottom:10px;
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    color:var(--azul);
+    font-size:2.5rem;
+}
+
+.club{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.club img{
+    width:100%;
+    border-radius:15px;
+}
+
+.club-text p{
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+.destacados{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:var(--azul);
+    margin-bottom:10px;
+}
+
+.eventos{
+    background:white;
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.event-card{
+    background:var(--crema);
+    border-radius:15px;
+    padding:25px;
+}
+
+.event-card h3{
+    color:var(--azul);
+    margin-bottom:10px;
 }
 
 .galeria{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:15px;
 }
 
 .galeria img{
     width:100%;
     height:280px;
     object-fit:cover;
-    border-radius:10px;
+    border-radius:12px;
+    transition:.3s;
 }
 
-.redes a{
-    display:inline-block;
-    margin:10px;
-    padding:12px 20px;
-    text-decoration:none;
-    background:#0f2744;
-    color:white;
-    border-radius:30px;
+.galeria img:hover{
+    transform:scale(1.03);
+}
+
+.contacto{
+    text-align:center;
+}
+
+.contacto p{
+    margin-bottom:15px;
 }
 
 footer{
-    background:#0f2744;
+    background:var(--azul);
     color:white;
     text-align:center;
-    padding:30px;
+    padding:40px 20px;
+}
+
+footer h3{
+    margin-bottom:10px;
 }
 
 @media(max-width:768px){
 
-h1{
-    font-size:2.5rem;
+.hero h1{
+    font-size:2.6rem;
 }
 
-.logo{
-    width:120px;
+.club{
+    grid-template-columns:1fr;
 }
 
+nav ul{
+    gap:10px;
+    font-size:.9rem;
+}
 }
 
 </style>
@@ -125,90 +266,171 @@ h1{
 
 <body>
 
-<header>
+<nav>
+  <div class="nav-container">
+      <div class="logo">🛵 Scooter Clásico MDP</div>
 
-<div class="hero">
+      <ul>
+          <li><a href="#club">Club</a></li>
+          <li><a href="#scooters">Scooters</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+      </ul>
+  </div>
+</nav>
 
-<img src="logo.png" class="logo" alt="Scooter Clásico MDP">
+<header class="hero">
+  <div class="hero-content">
+      <h1>Scooter Clásico Mar del Plata</h1>
 
-<h1>Scooter Clásico Mar del Plata</h1>
+      <p>
+        Un espacio para compartir la pasión por las
+        Vespa, Lambretta, Siambretta y los scooters
+        clásicos que forman parte de nuestra historia.
+      </p>
 
-<p>
-Desde 2014 preservando la historia de las motonetas clásicas.
-</p>
-
-</div>
-
+      <a href="#club" class="btn">Conocer el Club</a>
+  </div>
 </header>
 
-<section>
+<section id="club">
+<div class="container">
 
-<h2>Historia del Club</h2>
+<h2 class="section-title">Nuestro Club</h2>
+
+<div class="club">
+
+<img src="images/club.jpg" alt="Scooter Clásico">
+
+<div class="club-text">
 
 <p>
-Scooter Clásico Mar del Plata es una agrupación argentina de apasionados y amigos de las motonetas antiguas, fundada el 28 de septiembre de 2014.
+Somos un grupo de entusiastas de los scooters clásicos
+que compartimos encuentros, paseos y actividades en
+Mar del Plata y la zona.
 </p>
 
 <p>
-Reúne a entusiastas de Vespa, Siambretta, Lambretta, ISO y Velonetta, manteniendo viva la cultura scooterista en la Costa Atlántica.
+Nuestro objetivo es preservar la historia scooterista,
+mantener vivas máquinas legendarias y disfrutar de la
+camaradería entre aficionados.
 </p>
 
+<p>
+Participamos en exposiciones, caravanas y eventos
+especiales durante todo el año.
+</p>
+
+</div>
+</div>
+</div>
 </section>
 
-<section>
+<section id="scooters">
+<div class="container">
 
-<h2>Próximo Evento</h2>
+<h2 class="section-title">Scooters Destacados</h2>
 
-<p>
-16° Aniversario del Club Siambretta Chivilcoy.
-</p>
+<div class="destacados">
 
+<div class="card">
+<h3>Vespa</h3>
+<p>Icono italiano reconocido mundialmente por su elegancia y diseño atemporal.</p>
+</div>
+
+<div class="card">
+<h3>Lambretta</h3>
+<p>Una leyenda del scooter clásico con fuerte presencia histórica.</p>
+</div>
+
+<div class="card">
+<h3>Siambretta</h3>
+<p>La versión argentina que marcó generaciones de aficionados.</p>
+</div>
+
+<div class="card">
+<h3>Gilera</h3>
+<p>Modelos emblemáticos presentes en la historia del scooter nacional.</p>
+</div>
+
+</div>
+</div>
 </section>
 
-<section>
+<section class="eventos" id="eventos">
+<div class="container">
 
-<h2>Galería</h2>
+<h2 class="section-title">Próximos Eventos</h2>
+
+<div class="event-grid">
+
+<div class="event-card">
+<h3>Encuentro Mensual</h3>
+<p>Reunión de socios y exhibición de scooters clásicos.</p>
+</div>
+
+<div class="event-card">
+<h3>Caravana Costera</h3>
+<p>Recorrido por la costa marplatense con paradas para fotografías.</p>
+</div>
+
+<div class="event-card">
+<h3>Exposición Vintage</h3>
+<p>Participación junto a vehículos clásicos de distintas épocas.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="galeria">
+<div class="container">
+
+<h2 class="section-title">Galería</h2>
 
 <div class="galeria">
-
-<img src="30.jpg" alt="">
-<img src="31.jpg" alt="">
-<img src="34.jpg" alt="">
-
+<img src="images/galeria1.jpg" alt="">
+<img src="images/galeria2.jpg" alt="">
+<img src="images/galeria3.jpg" alt="">
+<img src="images/galeria4.jpg" alt="">
 </div>
 
+</div>
 </section>
 
-<section>
+<section id="contacto">
+<div class="container contacto">
 
-<h2>Redes Sociales</h2>
+<h2 class="section-title">Contacto</h2>
 
-<div class="redes">
+<p>Mar del Plata, Buenos Aires, Argentina</p>
 
-<a href="https://www.facebook.com/profile.php?id=100069358941322" target="_blank">
-Facebook
-</a>
+<p>
+Instagram:
+<strong>@scooterclasicomdp</strong>
+</p>
 
-<a href="https://www.instagram.com/scooterclasicomdp" target="_blank">
-Instagram
-</a>
-
-<a href="https://wa.me/5492235515290" target="_blank">
-WhatsApp
-</a>
+<p>
+Sumate a nuestras actividades y encuentros.
+</p>
 
 </div>
-
 </section>
 
 <footer>
 
-<p>Scooter Clásico Mar del Plata</p>
+<h3>Scooter Clásico Mar del Plata</h3>
 
-<p>Fundado el 28 de septiembre de 2014</p>
+<p>
+Preservando la historia scooterista argentina.
+</p>
+
+<p>
+© 2026 Todos los derechos reservados.
+</p>
 
 </footer>
 
 </body>
 </html>
-``
