@@ -34,9 +34,9 @@ nav{
 .nav-container{
     max-width:1200px;
     margin:auto;
-    padding:4px 20px;
+    padding:0 20px;
     display:flex;
-    justify-content:space-between;
+justify-content:flex-start;
     align-items:center;
 }
 
@@ -203,8 +203,14 @@ footer{
         display:none;
     }
 
-    .logo-menu{
-        font-size:1rem;
+   @media(max-width:768px){
+
+    .logo-menu img{
+        width:100px;
+        height:auto;
+    }
+
+}
     }
 
     .logo-menu img{
@@ -227,8 +233,7 @@ footer{
 </div>
 
 <ul>
-<li><a href="#club">Quiénes Somos</a></li></ul>
-
+<ul></ul>
 </div>
 
 </nav>
