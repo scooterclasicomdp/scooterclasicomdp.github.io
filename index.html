@@ -8,61 +8,155 @@
 
 <style>
 
-body{
+*{
     margin:0;
-    font-family:Arial,sans-serif;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(8px);
+    z-index:999;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:12px 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-menu{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    font-weight:bold;
+    font-size:1.1rem;
+}
+
+.logo-menu img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#f1c40f;
 }
 
 .hero{
     height:100vh;
+
     background:
     linear-gradient(
-        rgba(0,0,0,.60),
-        rgba(0,0,0,.60)
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
     ),
     url('hero.jpg');
 
     background-size:cover;
     background-position:center;
+
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
+
     text-align:center;
     color:white;
 }
 
-.logo{
-    width:800px;
+.logo-portada{
+    width:700px;
     max-width:90%;
-    margin-bottom:30px;
+    margin-bottom:20px;
 
     filter:
-        drop-shadow(0 0 10px rgba(0,0,0,.9))
-        drop-shadow(0 0 20px rgba(0,0,0,.9));
+    drop-shadow(0 0 15px rgba(0,0,0,.9))
+    drop-shadow(0 0 25px rgba(0,0,0,.9));
 }
 
-h1{
+.hero h1{
     font-size:4rem;
-    margin:0;
+    margin-bottom:15px;
 }
 
-p{
+.hero p{
     font-size:1.5rem;
+    margin-bottom:30px;
 }
 
-@media (max-width:768px){
+.btn{
+    background:#f1c40f;
+    color:black;
 
-    h1{
-        font-size:2.3rem;
+    padding:14px 30px;
+    border-radius:30px;
+
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:white;
+}
+
+.club{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.club h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.club p{
+    text-align:center;
+    line-height:1.8;
+    font-size:1.1rem;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.4rem;
     }
 
-    p{
-        font-size:1.1rem;
+    .hero p{
+        font-size:1rem;
     }
 
-    .logo{
-        width:95%;
+    nav ul{
+        display:none;
     }
 }
 
@@ -71,15 +165,55 @@ p{
 
 <body>
 
+<nav>
+
+<div class="nav-container">
+
+<div class="logo-menu">
+
+<img src="SC.png" alt="Logo">
+
+<span>🛵 Scooter Clásico MDP</span>
+
+</div>
+
+<ul>
+<li><a href="#club">Nuestro Club</a></li>
+</ul>
+
+</div>
+
+</nav>
+
 <section class="hero">
 
-   <img src="https://scooterclasicomdp.github.io/SCMDP_LOGO.png" class="logo" alt="Scooter Clásico Mar del Plata">
+<img src="SCMDP_LOGO.png"
+     class="logo-portada"
+     alt="SCMDP Logo">
 
-    <h1>Scooter Clásico Mar del Plata</h1>
+<h1>Scooter Clásico Mar del Plata</h1>
 
-    <p>
-        Desde 2014 compartiendo la pasión scooterista
-    </p>
+<p>
+Desde 2014 compartiendo la pasión por las
+Vespa, Lambretta y Siambretta.
+</p>
+
+<a href="#club" class="btn">
+Conocenos
+</a>
+
+</section>
+
+<section id="club" class="club">
+
+<h2>Nuestro Club</h2>
+
+<p>
+Somos una comunidad de apasionados por los scooters clásicos.
+Compartimos encuentros, paseos, exposiciones y la amistad que nos une
+desde 2014, manteniendo viva la historia de las Vespa, Lambretta y
+Siambretta en Mar del Plata.
+</p>
 
 </section>
 
