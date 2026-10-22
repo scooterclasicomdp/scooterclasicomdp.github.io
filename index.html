@@ -36,6 +36,21 @@ z-index:999;
 }
 
 .logo{
+display:flex;
+align-items:center;
+gap:12px;
+color:white;
+font-family:'Oswald',sans-serif;
+font-size:1.4rem;
+}
+
+.logo img{
+width:60px;
+height:60px;
+border-radius:50%;
+background:white;
+padding:3px;
+}
 color:white;
 font-family:'Oswald',sans-serif;
 font-size:1.4rem;
@@ -232,7 +247,8 @@ font-size:2.2rem;
 <nav>
 
 <div class="logo">
-Scooter Clásico MDP
+<img src="logo.png" alt="Scooter Clásico Mar del Plata">
+<span>Scooter Clásico MDP</span>
 </div>
 
 <ul>
@@ -247,6 +263,14 @@ Scooter Clásico MDP
 <section class="hero">
 
 <div class="hero-content">
+  <img src="logo.png"
+alt="Scooter Clásico Mar del Plata"
+class="hero-logo">
+.hero-logo{
+width:180px;
+margin-bottom:25px;
+filter:drop-shadow(0 5px 15px rgba(0,0,0,.4));
+}
 
 <h1>Scooter Clásico Mar del Plata</h1>
 
