@@ -19,7 +19,8 @@ html{
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
 }
 
 nav{
@@ -35,7 +36,6 @@ nav{
     max-width:1200px;
     margin:auto;
     padding:12px 20px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -58,17 +58,11 @@ nav{
 
 nav ul{
     list-style:none;
-    display:flex;
-    gap:20px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-}
-
-nav a:hover{
-    color:#f1c40f;
 }
 
 .hero{
@@ -85,9 +79,9 @@ nav a:hover{
     background-position:center;
 
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
 
     text-align:center;
     color:white;
@@ -97,12 +91,10 @@ nav a:hover{
     width:350px;
     max-width:75%;
     margin-bottom:25px;
-
     filter:
     drop-shadow(0 0 10px rgba(0,0,0,.9))
     drop-shadow(0 0 20px rgba(0,0,0,.9));
 }
-
 
 .hero h1{
     font-size:4rem;
@@ -110,34 +102,38 @@ nav a:hover{
 }
 
 .hero p{
-    font-size:1.5rem;
+    font-size:1.3rem;
     margin-bottom:30px;
 }
 
 .btn{
     background:#f1c40f;
     color:black;
-
     padding:14px 30px;
     border-radius:30px;
-
     text-decoration:none;
     font-weight:bold;
 }
 
-.btn:hover{
-    background:white;
-}
-
 .club{
-    padding:80px 20px;
     max-width:1100px;
     margin:auto;
+    padding:80px 20px;
 }
 
 .club h2{
     text-align:center;
     margin-bottom:30px;
+    font-size:2.5rem;
+}
+
+.club-foto{
+    width:100%;
+    max-width:850px;
+    display:block;
+    margin:0 auto 30px auto;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 .club p{
@@ -146,18 +142,70 @@ nav a:hover{
     font-size:1.1rem;
 }
 
+.galeria{
+    background:white;
+    padding:80px 20px;
+}
+
+.galeria h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.5rem;
+}
+
+.galeria-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.galeria-grid img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
 @media(max-width:768px){
 
     .hero h1{
-        font-size:2.4rem;
+        font-size:2.2rem;
     }
 
     .hero p{
         font-size:1rem;
     }
 
+    .logo-portada{
+        width:240px;
+    }
+
+    .galeria-grid{
+        grid-template-columns:1fr;
+    }
+
     nav ul{
         display:none;
+    }
+
+    .logo-menu{
+        font-size:1rem;
+    }
+
+    .logo-menu img{
+        width:50px;
+        height:50px;
     }
 }
 
@@ -171,15 +219,12 @@ nav a:hover{
 <div class="nav-container">
 
 <div class="logo-menu">
-
-<img src="SC.png" alt="Logo">
-
-<span>🛵 Scooter Clásico MDP</span>
-
+    <img src="SC.png" alt="Logo">
+    <span>🛵 Scooter Clásico MDP</span>
 </div>
 
 <ul>
-<li><a href="#club">Nuestro Club</a></li>
+    <li><a href="#club">Nuestro Club</a></li>
 </ul>
 
 </div>
@@ -188,9 +233,10 @@ nav a:hover{
 
 <section class="hero">
 
-<img src="SCMDP_LOGO.png"
-     class="logo-portada"
-     alt="SCMDP Logo">
+<img
+src="SCMDP_LOGO.png"
+class="logo-portada"
+alt="SCMDP Logo">
 
 <h1>Scooter Clásico Mar del Plata</h1>
 
@@ -207,112 +253,45 @@ Conocenos
 
 <section id="club" class="club">
 
-<section id="club" class="club">
-
 <h2>Nuestro Club</h2>
-<section class="galeria">
 
-<section class="galeria">
-
-<h2>Galería</h2>
-
-<div class="carousel">
-
-    <img src="galeria1.jpg" class="slide active">
-    <img src="galeria2.jpg" class="slide">
-    <img src="galeria3.jpg" class="slide">
-    <img src="galeria4.jpg" class="slide">
-.galeria{
-    padding:80px 20px;
-    background:#f5f5f5;
-    text-align:center;
-}
-
-.galeria h2{
-    margin-bottom:30px;
-    font-size:2.5rem;
-}
-
-.carousel{
-    position:relative;
-    max-width:900px;
-    margin:auto;
-}
-
-.slide{
-    display:none;
-    width:100%;
-    height:500px;
-    object-fit:cover;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-
-.slide.active{
-    display:block;
-}
-
-.prev,
-.next{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-
-    background:rgba(0,0,0,.6);
-    color:white;
-
-    border:none;
-    padding:15px 20px;
-    cursor:pointer;
-
-    font-size:24px;
-
-    border-radius:50%;
-}
-
-.prev{
-    left:15px;
-}
-
-.next{
-    right:15px;
-}
-
-.prev:hover,
-.next:hover{
-    background:black;
-}
-    <button class="prev" onclick="cambiarSlide(-1)">❮</button>
-    <button class="next" onclick="cambiarSlide(1)">❯</button>
-
-</div>
-
-</section>
-<img src="club.jpg" alt="Encuentro Scooter Clásico"
-     style="
-     width:100%;
-     max-width:850px;
-     display:block;
-     margin:30px auto;
-     border-radius:15px;
-     box-shadow:0 10px 30px rgba(0,0,0,.2);
-">
+<img
+src="club.jpg"
+alt="Encuentro Scooter Clásico"
+class="club-foto">
 
 <p>
-Scooter Clásico Mar del Plata nació en 2014 con el objetivo
-de reunir a apasionados de las Vespa, Lambretta y Siambretta,
-preservando la historia y la cultura scooterista.
+Scooter Clásico Mar del Plata nació en 2014 con el objetivo de reunir a apasionados de las Vespa, Lambretta y Siambretta, preservando la historia y la cultura scooterista.
 </p>
 
 <br>
 
 <p>
-Realizamos encuentros, caravanas, exposiciones y actividades
-solidarias, fomentando la amistad y compartiendo una misma
-pasión por los scooters clásicos.
+Realizamos encuentros, caravanas, exposiciones y actividades solidarias, fomentando la amistad y compartiendo una misma pasión por los scooters clásicos.
 </p>
 
 </section>
+
+<section class="galeria">
+
+<h2>Galería</h2>
+
+<div class="galeria-grid">
+
+<img src="galeria1.jpg" alt="Galería 1">
+<img src="galeria2.jpg" alt="Galería 2">
+<img src="galeria3.jpg" alt="Galería 3">
+<img src="galeria4.jpg" alt="Galería 4">
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© Scooter Clásico Mar del Plata</p>
+
+</footer>
 
 </body>
 </html>
