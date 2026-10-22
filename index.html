@@ -7,6 +7,7 @@
 <title>Scooter Clásico Mar del Plata</title>
 
 <style>
+
 body{
     margin:0;
     font-family:Arial,sans-serif;
@@ -15,8 +16,12 @@ body{
 .hero{
     height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    linear-gradient(
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.60)
+    ),
     url('hero.jpg');
+
     background-size:cover;
     background-position:center;
     display:flex;
@@ -28,33 +33,55 @@ body{
 }
 
 .logo{
-    max-width:700px;
-    width:90%;
-    margin-bottom:20px;
+    width:800px;
+    max-width:90%;
+    margin-bottom:30px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0,0,0,.9))
+        drop-shadow(0 0 20px rgba(0,0,0,.9));
 }
 
 h1{
-    font-size:60px;
+    font-size:4rem;
     margin:0;
 }
 
 p{
-    font-size:24px;
+    font-size:1.5rem;
 }
-</style>
 
+@media (max-width:768px){
+
+    h1{
+        font-size:2.3rem;
+    }
+
+    p{
+        font-size:1.1rem;
+    }
+
+    .logo{
+        width:95%;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-<div class="hero">
+<section class="hero">
 
-<img src="SCMDP_LOGO.png" class="logo" alt="SCMDP Logo">
+    <img src="SCMDP_LOGO.png" class="logo" alt="Scooter Clásico Mar del Plata">
 
-<h1>Scooter Clásico Mar del Plata</h1>
+    <h1>Scooter Clásico Mar del Plata</h1>
 
-<p>Desde 2014 compartiendo la pasión scooterista</p>
+    <p>
+        Desde 2014 compartiendo la pasión scooterista
+    </p>
 
-</div>
+</section>
 
 </body>
 </html>
