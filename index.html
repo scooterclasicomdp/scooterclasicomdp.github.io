@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Scooter Clásico Mar del Plata</title>
 
@@ -14,43 +14,41 @@ body{
 
 .hero{
     height:100vh;
-    background:url('hero.jpg') center center/cover no-repeat;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url('hero.jpg');
+    background-size:cover;
+    background-position:center;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
+    flex-direction:column;
     text-align:center;
     color:white;
 }
 
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.5);
-}
-
-.hero>*{
-    position:relative;
-    z-index:1;
-}
-
-.logo-portada{
-    max-width:500px;
+.logo{
+    max-width:700px;
     width:90%;
+    margin-bottom:20px;
 }
 
 h1{
     font-size:60px;
+    margin:0;
+}
+
+p{
+    font-size:24px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="hero">
 
-<img src="logo-largo.png" class="logo-portada" alt="Logo">
+<img src="SCMDP_LOGO.png" class="logo" alt="SCMDP Logo">
 
 <h1>Scooter Clásico Mar del Plata</h1>
 
